@@ -29,8 +29,9 @@ body {
     background: rgb(255, 209, 24);
     padding: 15px;
     display: flex;
-    align-items: center;
-    justify-content: space-between; /* ทำให้ Clock อยู่ด้านขวา และเมนูอยู่ตรงกลาง */
+    align-items: center; /* ทำให้ทุกองค์ประกอบอยู่ในแนวเดียวกัน */
+    justify-content: center; /* จัดให้อยู่ตรงกลาง */
+    gap: 30px; /* เพิ่มระยะห่าง */
     z-index: 1000;
 }
 
@@ -39,7 +40,7 @@ body {
     display: flex;
     justify-content: center; /* ทำให้เมนูอยู่ตรงกลาง */
     flex-grow: 1; /* ขยายเต็มพื้นที่ */
-    gap: 20px; /* เพิ่มระยะห่างระหว่างเมนู */
+    gap: 20px;
 }
 
 /* เมนูหลัก */
@@ -56,13 +57,15 @@ body {
     color: rgb(100, 100, 100);
 }
 
-/* Clock อยู่ด้านขวาสุด */
 #clock {
     color: black;
     font-size: 18px;
     font-weight: bold;
+    padding-right: 20px;
+    display: flex;
+    align-items: center; /* ทำให้ Clock อยู่ในแนวเดียวกับเมนู */
     position: absolute;
-    right: 40px;
+    right: 20px; /* ปรับให้ไม่ลอยเลยขอบ */
     top: 50%;
     transform: translateY(-50%);
 }
@@ -75,6 +78,7 @@ body {
     align-items: center;
     flex-direction: column;
     position: relative;
+    margin-top: 70px; /* ป้องกันเนื้อหาด้านล่างซ้อนทับเมนู */
 }
 
 /* Headings */
@@ -145,21 +149,30 @@ body {
 /* Responsive Design */
 @media (max-width: 768px) {
     .menu {
-        flex-direction: row; /* ให้เมนูเรียงในแนวนอน */
-        justify-content: space-between; /* ให้เนื้อหากระจายตำแหน่ง */
+        flex-direction: row; /* ให้เมนูเรียงในแนวนอนบนมือถือ */
+        justify-content: space-between; /* ให้เมนูกระจายตำแหน่ง */
         padding: 10px;
     }
 
     .menu-center {
-         display: flex;
-        justify-content: flex-start; /* จัดชิดด้านซ้าย */
+        display: flex;
+        flex-direction: row; /* บังคับให้เรียงแนวนอน */
+        justify-content: flex-start; /* จัดให้อยู่ด้านซ้าย */
         gap: 15px;
         flex-grow: 1;
     }
 
     #clock {
-        position: static;
-        padding-right: 10px;
+    color: black;
+    font-size: 18px;
+    font-weight: bold;
+    padding-right: 20px;
+    display: flex;
+    align-items: center; /* ทำให้ Clock อยู่ในแนวเดียวกับเมนู */
+    position: absolute;
+    right: 5px; /* ปรับให้ไม่ลอยเลยขอบ */
+    top: 50%;
+    transform: translateY(-50%);
     }
 
     .project-container {
