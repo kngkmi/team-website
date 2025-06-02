@@ -152,9 +152,10 @@ body {
 
     .menu-center {
         display: flex;
-        flex-direction: row; /* บังคับให้เรียงแนวนอน */
-        justify-content: center;
+        flex-direction: row;
+        justify-content: flex-start; /* จัดชิดด้านซ้าย */
         gap: 15px;
+        width: 100%;
     }
 
     #clock {
