@@ -30,7 +30,7 @@ body {
     padding: 15px;
     display: flex;
     align-items: center;
-    justify-content: center; /* เมนูอยู่ตรงกลาง */
+    justify-content: space-between; /* ทำให้ Clock อยู่ด้านขวา และเมนูอยู่ตรงกลาง */
     z-index: 1000;
 }
 
@@ -38,7 +38,8 @@ body {
 .menu-center {
     display: flex;
     justify-content: center; /* ทำให้เมนูอยู่ตรงกลาง */
-    gap: 20px;
+    flex-grow: 1; /* ขยายเต็มพื้นที่ */
+    gap: 20px; /* เพิ่มระยะห่างระหว่างเมนู */
 }
 
 /* เมนูหลัก */
@@ -61,7 +62,9 @@ body {
     font-size: 18px;
     font-weight: bold;
     position: absolute;
-    right: 20px;
+    right: 40px;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 /* Section */
@@ -141,39 +144,35 @@ body {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    .menu {
+        flex-direction: row; /* ให้เมนูเรียงในแนวนอนบนมือถือ */
+        justify-content: center; /* ทำให้เมนูอยู่ตรงกลาง */
+        padding: 10px;
+    }
+
     .menu-center {
         display: flex;
-        flex-wrap: wrap; /* ให้เนื้อหาอยู่ในบรรทัดเดียวกัน */
-        justify-content: center; /* จัดให้อยู่ตรงกลาง */
-        gap: 20px; /* เพิ่มระยะห่าง */
-    }
+        flex-direction: row; /* บังคับให้เรียงแนวนอน */
+        justify-content: center;
+        gap: 15px;
     }
 
     #clock {
-    color: black;
-    font-size: 18px;
-    font-weight: bold;
-    position: absolute;
-    right: 10px; /* ลดระยะห่างจากขอบขวา */
-    top: 50%;
-    transform: translateY(-50%);
-    }
-
-    .menu-center {
-        flex-direction: column;
-        align-items: center;
+        position: static;
+        padding-right: 10px;
     }
 
     .project-container {
-        flex-direction: column;
-        align-items: center;
+        flex-wrap: wrap; /* ให้โปรเจกต์เรียงแนวนอนเมื่อมีที่พอ */
+        justify-content: center;
     }
 
     .project-card {
-        width: 90%;
+        width: 90%; /* ขยายให้พอดีกับหน้าจอ */
         margin-bottom: 15px;
     }
 
     .about-container {
         max-width: 90%;
     }
+}
