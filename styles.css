@@ -1,0 +1,65 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f0f0f0;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#team-text {
+    font-size: 100px;
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+    display: flex;
+}
+
+.menu {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background:rgb(255, 209, 24);
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.menu a {
+    color: black; /* เปลี่ยนสีฟอนต์เป็นดำ */
+    margin: 0 15px;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+    transition: transform 0.3s ease-in-out; /* เพิ่มเอฟเฟกต์นุ่มนวล */
+}
+
+.menu a:hover {
+    transform: scale(1.2); /* ขยายขนาดเมื่อเอาเมาส์ไปชี้ */
+}
+
+.section {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.letter {
+    opacity: 0;
+    animation: fadeIn 1s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
