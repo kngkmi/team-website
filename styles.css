@@ -29,21 +29,21 @@ body {
     background: rgb(255, 209, 24);
     padding: 15px;
     display: flex;
-    justify-content: center; /* ทำให้เมนูอยู่ตรงกลาง */
     align-items: center;
+    justify-content: center; /* เมนูอยู่ตรงกลาง */
     z-index: 1000;
-    gap: 30px;
 }
 
+/* กล่องเมนูหลัก */
 .menu-center {
     display: flex;
-    justify-content: center; /* จัดให้อยู่ตรงกลาง */
-    flex-grow: 1; /* ให้ขยายเต็มพื้นที่ที่มี */
+    justify-content: center; /* ทำให้เมนูอยู่ตรงกลาง */
+    gap: 20px;
 }
 
+/* เมนูหลัก */
 .menu a {
     color: black;
-    margin: 0 20px;
     text-decoration: none;
     font-size: 22px;
     font-weight: bold;
@@ -55,14 +55,13 @@ body {
     color: rgb(100, 100, 100);
 }
 
-/* Clock */
+/* Clock อยู่ด้านขวาสุด */
 #clock {
     color: black;
     font-size: 18px;
     font-weight: bold;
-    padding-right: 20px;
     position: absolute;
-    right: 20px; /* จัดให้ clock อยู่ขวาสุด */
+    right: 20px;
 }
 
 /* Section */
@@ -133,15 +132,41 @@ body {
 
 /* About Us Section */
 .about-container {
-    max-width: 500px; /* ลดขนาดให้พอดี */
+    max-width: 500px; /* ปรับให้พอดีกับเนื้อหา */
     background: white;
-    padding: 20px; /* ลด padding ให้เหมาะสม */
+    padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-.about-container p {
-    font-size: 18px;
-    line-height: 1.6;
-    color: #555;
+/* Responsive Design */
+@media (max-width: 768px) {
+    .menu {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    #clock {
+        position: static;
+        padding-bottom: 10px;
+    }
+
+    .menu-center {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .project-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .project-card {
+        width: 90%;
+        margin-bottom: 15px;
+    }
+
+    .about-container {
+        max-width: 90%;
+    }
 }
