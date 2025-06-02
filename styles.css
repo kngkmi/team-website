@@ -141,14 +141,22 @@ body {
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    .menu {
-        flex-direction: column;
-        padding: 10px;
+    .menu-center {
+        display: flex;
+        flex-wrap: wrap; /* ให้เนื้อหาอยู่ในบรรทัดเดียวกัน */
+        justify-content: center; /* จัดให้อยู่ตรงกลาง */
+        gap: 20px; /* เพิ่มระยะห่าง */
+    }
     }
 
     #clock {
-        position: static;
-        padding-bottom: 10px;
+    color: black;
+    font-size: 18px;
+    font-weight: bold;
+    position: absolute;
+    right: 10px; /* ลดระยะห่างจากขอบขวา */
+    top: 50%;
+    transform: translateY(-50%);
     }
 
     .menu-center {
@@ -169,4 +177,3 @@ body {
     .about-container {
         max-width: 90%;
     }
-}
