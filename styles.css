@@ -145,22 +145,21 @@ body {
 /* Responsive Design */
 @media (max-width: 768px) {
     .menu {
-        flex-direction: row; /* ให้เมนูเรียงในแนวนอนบนมือถือ */
-        justify-content: center; /* ทำให้เมนูอยู่ตรงกลาง */
+        flex-direction: row; /* ให้เมนูเรียงในแนวนอน */
+        justify-content: space-between; /* ให้เนื้อหากระจายตำแหน่ง */
         padding: 10px;
     }
 
     .menu-center {
-        display: flex;
-        flex-direction: row;
+         display: flex;
         justify-content: flex-start; /* จัดชิดด้านซ้าย */
         gap: 15px;
-        width: 100%;
+        flex-grow: 1;
     }
 
     #clock {
         position: static;
-        padding-right: 40px;
+        padding-right: 10px;
     }
 
     .project-container {
