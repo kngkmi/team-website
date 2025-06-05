@@ -189,3 +189,13 @@ body {
         max-width: 90%;
     }
 }
+
+ /* Credit team */
+.footer {
+    width: 100%;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    padding: 15px;
+    position: relative; /* ให้ส่วนท้ายอยู่ตามลำดับเนื้อหา */
+    margin-top: 50px; /* เพิ่มระยะห่างจากเนื้อหาด้านบน */
+}
